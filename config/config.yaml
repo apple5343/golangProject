@@ -1,0 +1,5 @@
+server:
+  address: "localhost"
+  port: ":8080"
+database_path: "database/Computations.db"
+workers: 8

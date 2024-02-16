@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="notification" class="notification">уведомление</div>
+    <div class="head">Калькулятор</div>
+    <div class="container">
+        <div class="menu">
+            <button id="calculator-btn" class="menu-btn" data-show="calculator">Калькулятор</button>
+            <button id="settings-btn" class="menu-btn" data-show="operations">Настройки</button>
+            <button id="workers-btn" class="menu-btn" data-show="workers">Воркеры </button>
+        </div>
+        <div class="content">
+            <div class="calculator window">
+                <div class="input-block">
+                    <input type="text" id="expression" class="expression-value">
+                    <button class="expression-btn">Вычислить</button>
+                </div>
+                <ul class="expressions-list">
+                </ul>
+            </div>
+            <div class="workers window hide">
+                <ul class="workers-list"></ul>
+            </div>
+            <div class="operations window hide">
+                <label for="">Вычитание</label>
+                <input class="operation" type="number" min="0" id="minus">
+                <label for="">Сложение</label>
+                <input class="operation" type="number" min="0" id="plus">
+                <label for="">Деление</label>
+                <input class="operation" type="number" min="0" id="division">
+                <label for="">Умножение</label>
+                <input class="operation" type="number" min="0" id="multiplication">
+                <button class="operations-btn">Сохранить</button>
+            </div>
+            <div class="modal">
+                <div class="modal-content">
+                    <p class="expression-info-value"></p>
+                    <div class="expression-info">
+                        <div><p class="expression-id">ID: </p> <p class="expression-created">Создан: </p></div>
+                        <div><p class="expression-lastPing">Последнее обновление: </p> <p class="expression-status">Статус: </p> <p class="expression-result">Результат: </p></div>
+                    </div>
+                    <p>Шаги выполнения</p>
+                    <ol class="subtasks-list">
+                    </ol>
+                </div>
+              </div>
+        </div>
+    </div>
+    <script src="/static/scripts/main.js"></script>
+</body>
+</html>
