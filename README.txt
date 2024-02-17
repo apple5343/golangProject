@@ -1,6 +1,6 @@
 Запуск
 	Используем git и docker(убедитесь, что докер запущен)
-	выполняем в консоль: go clone https://github.com/apple5343/golangProject
+	выполняем в консоль: git clone https://github.com/apple5343/golangProject
 	переходим в папку с проектом и выполняем: docker build -t myapp .
 	затем выполняем: docker run -p 8080:8080 -d -v <путь до проекта>/database:/app/database -v <путь до проекта>/config:/app/config myapp
 		Если путь будет указан неверно, то изменения не будут сохраняться в базу данных при перезапуске
