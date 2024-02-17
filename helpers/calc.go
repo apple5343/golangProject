@@ -5,6 +5,7 @@ import (
 	"server/config"
 	"server/server/db"
 	"slices"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -124,7 +125,7 @@ func (w *Worker) worker(in chan *Subtask, id int, killCh <-chan int) {
 			select {
 			case <-time.After(time.Duration(w.Delays[v.substack.op]) * time.Second):
 				result, _ := expression.Eval(nil)
-				v.substack.result = fmt.Sprintf("%.2f", result)
+				v.substack.result = strconv.FormatFloat(result.(float64), 'f', -1, 64)
 				v.pingCh <- v.substack.id
 				v.wg.Done()
 				w.ChangeStatus(id, "in waiting")
