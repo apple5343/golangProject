@@ -179,7 +179,7 @@ func IsValidExpression(expression string) bool {
 	if matched, _ := regexp.MatchString(`^[*/+]|[*\/+]$`, expression); matched {
 		return false
 	}
-	re := regexp.MustCompile(`\/\s*-?0+(\s*[\+\-\*\/]|$)`)
+	re := regexp.MustCompile(`\/\s*-?\s*0(\.0+)?\s*([+\-*/]|$)`)
 	if re.MatchString(expression) {
 		return false
 	}
